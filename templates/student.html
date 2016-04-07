@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student View</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2>Lorem Ipsum </h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            Name: {{student[2].value}} {{student[4].value}}
+                        </div>
+                        <div class="col-xs-12">
+                            Class: {{student[0].value}}
+                        </div>
+                        <div class="col-xs-12">
+                            Number: {{student[1].value}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Co-Activities
+                                </div>
+                                <table class="table">
+                                    <th>Club/Activity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                    {% for club in clubs %}
+                                      <tr>
+                                        <td>{{club[0]}}</td>
+                                        <td>{{club[1]}}</td>
+                                        <td>
+                                          {% if student[5].value != None and student[5].value.lower() == club[0].lower() %}
+                                            <i class="glyphicon glyphicon-ok"></i>
+
+                                          {% endif %}
+                                        </td>
+                                      </tr>
+
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Activities
+                                </div>
+                                <table class="table">
+                                    <th>Club/Activity</th>
+                                    <th>Price per term (N)</th>
+                                    <th></th>
+                                    {% for activity in extra %}
+                                      <tr>
+                                        <td>{{activity[0]}}</td>
+                                        <td>{{activity[1]}}</td>
+                                        <td>
+                                          {% if student[5].value != None and student[6].value.lower() == activity[0].lower() %}
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                          {% endif %}
+                                        </td>
+                                      </tr>
+
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <p>
+                          Signed: __________________
+                        </p>
+                        
+                      </div>
+                      <div class="col-xs-12">
+                        <p>
+                           Date: _________
+                        </p>
+                       
+                      </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+
+</html>
